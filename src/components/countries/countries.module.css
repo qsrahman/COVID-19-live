@@ -1,0 +1,35 @@
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cardbody {
+  max-width: 300px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.cardbody img {
+  min-width: 250px;
+  height: 140px;
+  object-fit: cover;
+}
+
+.cardbody .info {
+  padding: 0 20px;
+}
+
+.cardbody .info h3 {
+  margin: 10px 0;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.cardbody .info h4 {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
