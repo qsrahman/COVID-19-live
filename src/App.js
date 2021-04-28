@@ -6,6 +6,7 @@ import Summary from './components/summary'
 function App() {
   const [latest, setLatest] = useState({})
   const [results, setResults] = useState([])
+  const [countries, setCountries] = useState([])
   const [loading, setLoading] = useState(true)
   const [searchTerm, setSearchTerm] = useState('')
 
@@ -25,11 +26,14 @@ function App() {
       .catch(error => console.log(error))
   }, [])
 
-  const countries = results.filter(item => {
-    return searchTerm !== ''
-      ? item.country.toLowerCase().includes(searchTerm.toLowerCase())
-      : item
-  })
+  useEffect(() => {
+    const filteredCountries = results.filter(item => {
+      return searchTerm !== ''
+        ? item.country.toLowerCase().includes(searchTerm.toLowerCase())
+        : item
+    })
+    setCountries(filteredCountries)
+  }, [searchTerm, results])
 
   return (
     <>
